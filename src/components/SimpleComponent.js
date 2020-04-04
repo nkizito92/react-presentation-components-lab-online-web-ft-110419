@@ -10,12 +10,11 @@ export default class SimpleComponent extends Component {
   }
   
   handleClick =() => {
-      if(this.mood === "sad") {
-        
     this.setState({
-      mood: "happy"
+      mood: "sad"
     })
-      } else {
+    
+       if (this.state.mood === "sad" ) {
         this.setState((prevState) => ({
         mood: prevState.mood
     }));
@@ -24,7 +23,7 @@ export default class SimpleComponent extends Component {
   
   render (){
     return (
-        <div onClick={this.handleClick}>{this.state.mood} </div>
+        <div onClick={this.handleClick}>{this.state.mood}</div>
       )
   }
 }
