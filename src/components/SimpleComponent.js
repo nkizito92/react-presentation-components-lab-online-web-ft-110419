@@ -9,16 +9,22 @@ export default class SimpleComponent extends Component {
     }
   }
   
-  handleClick() {
-      
+  handleClick =() => {
+      if(this.mood === "sad") {
+        
     this.setState({
-      mood: "sad"
+      mood: "happy"
     })
+      } else {
+        this.setState((prevState) => ({
+        mood: prevState.mood
+    }));
+      }
   }
   
   render (){
     return (
-        <div onToggle={this.handleClick}>{this.state.mood} </div>
+        <div onClick={this.handleClick}>{this.state.mood} </div>
       )
   }
 }
